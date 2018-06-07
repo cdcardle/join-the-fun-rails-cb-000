@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 20180607155437) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "taxis_passengers", id: false, force: :cascade do |t|
+  create_table "passengers_taxis", id: false, force: :cascade do |t|
     t.integer "taxi_id",      null: false
     t.integer "passenger_id", null: false
   end
 
-  add_index "taxis_passengers", ["passenger_id"], name: "index_taxis_passengers_on_taxi_id"
-  add_index "taxis_passengers", ["taxi_id"], name: "index_taxis_passengers_on_passenger_id"
+  add_index "passengers_taxis", ["passenger_id"], name: "index_passengers_taxis_on_passenger_id"
+  add_index "passengers_taxis", ["taxi_id"], name: "index_passengers_taxis_on_taxi_id"
 
   create_table "rides", force: :cascade do |t|
     t.datetime "created_at", null: false
